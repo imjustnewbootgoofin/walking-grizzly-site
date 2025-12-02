@@ -361,31 +361,27 @@
 
     .hero-image-slot {
       border-radius: 1.1rem;
-      border: 1px dashed rgba(249, 250, 251, 0.4);
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3));
-      padding: 1.1rem;
+      border: 1px solid rgba(249, 250, 251, 0.4);
+      background: rgba(15, 23, 42, 0.9);
       min-height: 200px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
-    .hero-image-slot-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #e5e7eb;
-    }
-
-    .hero-image-slot-text {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-      max-width: 260px;
+    .hero-image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex: 1 1 auto;
     }
 
     .hero-tag {
       font-size: 0.75rem;
       color: #a5b4fc;
+      padding: 0.6rem 0.9rem 0.8rem;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
     }
 
     .hero-ribbon {
@@ -547,16 +543,17 @@
 
     .gallery-item {
       border-radius: 0.9rem;
-      border: 1px dashed rgba(148, 163, 184, 0.6);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.4);
       background: rgba(15, 23, 42, 0.9);
-      padding: 0.9rem;
-      font-size: 0.8rem;
-      color: #d1d5db;
-      min-height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      padding: 0;
+      min-height: 120px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .video-wrapper {
@@ -839,17 +836,13 @@
       </div>
       <div class="hero-media">
         <div class="hero-ribbon">Media ready</div>
-        <div class="hero-image-slot">
-          <div class="hero-image-slot-title">
-            Hero image placeholder
-          </div>
-          <div class="hero-image-slot-text">
-            Replace this area with a photo, illustration, or artwork that reflects your community, land, or story.
-          </div>
-          <div class="hero-tag">
-            Suggested: landscape, Tribal artwork, community gathering, or symbolic image.
-          </div>
-        </div>
+        <figure class="hero-image-slot">
+          <img src="images/hero-landscape.jpg"
+               alt="Landscape important to the community served by Walking Grizzly Bear and Consulting LLC">
+          <figcaption class="hero-tag">
+            Walking Grizzly Bear and Consulting LLC · Tribal and community centered consulting.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </main>
@@ -1012,13 +1005,16 @@
       <div class="gallery-layout">
         <div class="gallery-grid">
           <div class="gallery-item">
-            Image placeholder for a community gathering, council meeting, or cultural event.
+            <img src="images/gallery-community.jpg"
+                 alt="Community gathering and conversation space">
           </div>
           <div class="gallery-item">
-            Image placeholder for land, water, or a landscape that matters to your community.
+            <img src="images/gallery-landscape.jpg"
+                 alt="Landscape and land connected to the community">
           </div>
           <div class="gallery-item">
-            Image placeholder for artwork, beadwork, or another visual that you have permission to share.
+            <img src="images/gallery-art.jpg"
+                 alt="Artwork or cultural piece shared with permission">
           </div>
         </div>
         <div>
@@ -1026,7 +1022,6 @@
             You can embed an introductory video here that explains how Walking Grizzly Bear and Consulting LLC approaches consulting, what communities can expect, and how you honor sovereignty and stories.
           </p>
           <div class="video-wrapper">
-            <!-- Replace VIDEO_ID_HERE with your YouTube video ID -->
             <iframe src="https://www.youtube.com/embed/LYSUy4bsAoA"
                     title="Walking Grizzly Bear and Consulting LLC introduction"
                     frameborder="0"
